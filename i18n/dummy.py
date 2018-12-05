@@ -247,7 +247,8 @@ class DummyCommand(Runner):
         if args.verbose:
             print()
 
-main = DummyCommand()  # pylint: disable=invalid-name
+
+main = DummyCommand()
 
 if __name__ == '__main__':
     main()

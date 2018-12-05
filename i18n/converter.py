@@ -26,13 +26,13 @@ class Converter(object):
     #   Python: %(date)s, %(name)s
     tag_pattern = re.compile(
         r'''
-        (<[^>]+>)           |       # <tag>
-        ({[^}]+})           |       # {tag}
-        (%\([\w]+\)\w)      |       # %(tag)s
-        (%[sdrxf])          |       # %s
-        (&\w+;)             |       # &entity;
-        (&\#\d+;)           |       # &#1234;
-        (&\#x[0-9a-f]+;)            # &#xABCD;
+        (<[^>]+>)                       |       # <tag>
+        ({[^}]+})                       |       # {tag}
+        (%\([\w]+(?:\.[\w]+)*\)\w)      |       # %(tag)s
+        (%[sdrxf])                      |       # %s
+        (&\w+;)                         |       # &entity;
+        (&\#\d+;)                       |       # &#1234;
+        (&\#x[0-9a-f]+;)                        # &#xABCD;
         ''',
         re.IGNORECASE | re.VERBOSE
     )
